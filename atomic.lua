@@ -173,6 +173,8 @@ local function defineAtomicTensorVector(typename)
         assert(self)
         return self.numElements[1]
     end
+    -- __len requires Lua version >= 5.2
+    mt.len = mt.__len
 
     function mt:__write(f)
         assert(self)
